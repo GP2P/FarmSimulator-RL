@@ -46,6 +46,10 @@
 		{
 			"Name": "LearningAgents",
 			"Enabled": true
+		},
+		{
+			"Name": "GameplayBehaviorSmartObjects",
+			"Enabled": true
 		}
 	]
 }
