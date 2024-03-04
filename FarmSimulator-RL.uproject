@@ -48,18 +48,8 @@
 			"Enabled": true
 		},
 		{
-			"Name": "AutoSizeComments",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/ae89a2c4ab384de0a3f213b23de324f3"
-		},
-		{
 			"Name": "GameplayBehaviorSmartObjects",
 			"Enabled": true
-		},
-		{
-			"Name": "SaveFileEditor",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/489bec9346e0467c95a16185f42ab7cb"
 		}
 	]
 }
