@@ -1,7 +1,8 @@
-# FarmSimulator
+# FarmSimulator-RL
 
-Developed for by G3P with Unreal Engine 5, using art assets from the Unreal Marketplace. Styled using the [Gamemakin UE5 Style Guide](https://github.com/Allar/ue5-style-guide)
+Developed for a UC Berkeley Research Project "Simulating Group Diversity for Gate-keeping Policies using Game Engine Reinforcement Learning", migrated from the G3P [FarmSimulator](https://github.com/GP2P/FarmSimulator/) AI system template.
 
+Developed with Unreal Engine 5. Using art assets from the Unreal Marketplace. Styled using the [Gamemakin UE5 Style Guide](https://github.com/Allar/ue5-style-guide)
 
 ## AI System
 
