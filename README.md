@@ -4,6 +4,8 @@ Developed for a UC Berkeley Research Project "Simulating Group Diversity for Gat
 
 Developed with Unreal Engine 5. Using art assets from the Unreal Marketplace. Styled using the [Gamemakin UE5 Style Guide](https://github.com/Allar/ue5-style-guide)
 
+**Note:** The Reinforcement Learning part of this project does not work on macOS. This is a limitation of the Learning Agents beta plugin in UE5.3
+
 ## AI System
 
 ### Features
