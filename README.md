@@ -25,53 +25,52 @@ This system is a personal trial of implementing complex AI systems in factory ma
 
 <img width="755" alt="Screen Shot 2022-06-19 at 11 16 10 PM" src="https://user-images.githubusercontent.com/73323107/174519271-05bd28d7-b115-4186-be1d-aa59888c62be.png">
 
--------------------------------------------------------------------
+
 ## To run
-	- First install Unreal Engine 5.3 (download via launcher https://www.unrealengine.com/en-US/download)
-	- Plugins:
-		- Note: If you don't have a certain plugins and there's a prompt to start anyway, click "yes" -> might change some files to disable the plugin for you.  Do not commit it.
-	- Artistic Build (in "Visuals" branch)
-		- Kobo_ForestVillage
-	- Git clone this project
-	- Navigate to the FarmSimulator-RL folder
-	- Double click the FarmSimulator-RL Unreal Project File
-	- Click 'Play'/'Simulate' (Green arrow/alt+s) to play the simulation
-	- Notes for Unreal:
-		- You cannot use git to look at the diff's of a file.  Look at the diffs through the revision control functionality in the UE5 editor.
-		- You can do global search
+- First install Unreal Engine 5.3 (download via launcher https://www.unrealengine.com/en-US/download)
+- Plugins:
+	- Note: If you don't have a certain plugins and there's a prompt to start anyway, click "yes" -> might change some files to disable the plugin for you.  Do not commit it.
+- Artistic Build (in "Visuals" branch)
+	- Kobo_ForestVillage
+- Git clone this project
+- Navigate to the FarmSimulator-RL folder
+- Double click the FarmSimulator-RL Unreal Project File
+- Click 'Play'/'Simulate' (Green arrow/alt+s) to play the simulation
+- Notes for Unreal:
+	- You cannot use git to look at the diff's of a file.  Look at the diffs through the revision control functionality in the UE5 editor.
+	- You can do global search
 
 ## Overall structure
-	- Search for each of these in the content manager
-	- Farm Simulator-RL folder (most important)
-		- Environment Folder (where the environment creation logic lives)
-			- BPRoomConfig
-				- This is where you can modify the environment values
-				- Go to this file and go to defaults on the right panel
-					- Modifying this will modify the game
-				- Make sure that after you make the changes
-			- SimWorld
-				- Level blueprint
-				- This is where the world is populated
-		- Agent folder (where the agent logic lives)
-			- BPAgentPathfinding
-				- Responsible for pathfinding agent behavior
-		- Learning folder (where the RL lives)
-			- BPGateInteractor
-				- Rewards for RL are populated here
-			- RLTrainingManager
-				- Manages the nn settings and termination conditions
-					- Termination condition can be set to infinite
+- Search for each of these in the content manager
+- Farm Simulator-RL folder (most important)
+	- Environment Folder (where the environment creation logic lives)
+		- BPRoomConfig
+			- This is where you can modify the environment values
+			- Go to this file and go to defaults on the right panel
+				- Modifying this will modify the game
+			- Make sure that after you make the changes
+		- SimWorld
+			- Level blueprint
+			- This is where the world is populated
+	- Agent folder (where the agent logic lives)
+		- BPAgentPathfinding
+			- Responsible for pathfinding agent behavior
+	- Learning folder (where the RL lives)
+		- BPGateInteractor
+			- Rewards for RL are populated here
+		- RLTrainingManager
+			- Manages the nn settings and termination conditions
+				- Termination condition can be set to infinite
 
 ## Flow
-	- When you click 'Play'/'Simulate' (Green arrow/alt+s)
-	- 1) SimWorld
-		- Spawns rooms according to room config
-			- rooms construction script spawns the dimensions + gates collision box
-			- room begin play function
-				- spawns gates
-					- Contains entry queue for agents who want to enter
-					- Gates use the agentEnter() function to ask the BPInteractor which makes a decision on entry or rejection, then the admitHuman() function actually admits/rejects the agents
-				- spawns agents and fuel within room
-					- Make sure you don't have too many agents for each room! Will stop spawning process and display warning.
-					- Pathfinding agent has an AI controller attached from the BTTPathfindingAgent in Pathfinding folder
-						- Will look inside the room and reserve + navigate to resources and gates
+- When you click 'Play'/'Simulate' (Green arrow/alt+s) in FarmSimulator-RL/SimWorld
+	- Spawns rooms according to room config
+		- rooms construction script spawns the dimensions + gates collision box
+		- room begin play function
+			- spawns gates
+				- Contains entry queue for agents who want to enter
+				- Gates use the agentEnter() function to ask the BPInteractor which makes a decision on entry or rejection, then the admitHuman() function actually admits/rejects the agents
+			- spawns agents and fuel within room
+				- Make sure you don't have too many agents for each room! Will stop spawning process and display warning.
+				- Pathfinding agent has an AI controller attached from the BTTPathfindingAgent in Pathfinding folder
+					- Will look inside the room and reserve + navigate to resources and gates
